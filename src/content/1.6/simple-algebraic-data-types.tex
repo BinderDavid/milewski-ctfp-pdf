@@ -305,17 +305,6 @@ depending on how your \code{List} was created, it will match one of
 the clauses. If it was created using \code{Cons}, the two arguments
 that were passed to it will be retrieved (and the first discarded).
 
-Even more elaborate sum types are implemented in C++ using polymorphic
-class hierarchies. A family of classes with a common ancestor may be
-understood as one variant type, in which the vtable serves as a hidden
-tag. What in Haskell would be done by pattern matching on the
-constructor, and by calling specialized code, in C++ is accomplished by
-dispatching a call to a virtual function based on the vtable pointer.
-
-You will rarely see \code{union} used as a sum type in C++ because of
-severe limitations on what can go into a union. You can't even put a
-\code{std::string} into a union because it has a copy constructor.
-
 \section{Algebra of Types}
 
 Taken separately, product and sum types can be used to define a variety
